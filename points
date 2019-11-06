@@ -1,0 +1,48 @@
+unit zadanie2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    przycisk: TButton;
+    punkt_1: TEdit;
+    punkt_4: TEdit;
+    wynik: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    punkt_2: TEdit;
+    punkt_3: TEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure przyciskClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.przyciskClick(Sender: TObject);
+var x1,y1,x2,y2,result: extended;
+begin
+x1:=strtofloat(punkt_1.Text);
+y1:=strtofloat(punkt_2.Text);
+x2:=strtofloat(punkt_3.Text);
+y2:=strtofloat(punkt_4.Text);
+
+result:=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+wynik.Text:= floattostr(result);
+end;
+
+end.
